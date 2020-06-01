@@ -4,7 +4,7 @@
 :banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana::banana:
 
 
-<img src="assets/banana_agent.gif" width="60%" align="top-left" alt="" title="Banana Agent" />
+<img src="images/ba.gif" width="60%" align="top-left" alt="" title="Banana Agent" />
 
 *Above: My trained agent in action!*
 
