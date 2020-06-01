@@ -95,13 +95,13 @@ To address this, I implemented an **𝛆-greedy algorithm**. This algorithm allo
 
 Furthermore, the value of epsilon is purposely decayed over time, so that the agent favors exploration during its initial interactions with the environment, but increasingly favors exploitation as it gains more experience. The starting and ending values for epsilon, and the rate at which it decays are three hyperparameters that are later tuned during experimentation.
 
-You can find the 𝛆-greedy logic implemented as part of the `agent.act()` method [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/agent.py#L66) in `agent.py` of the source code.
+You can find the 𝛆-greedy logic implemented as part of the `agent.act()` method [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/blob/master/agent.py#L66) in `agent.py` of the source code.
 
 
 #### Deep Q-Network (DQN)
 With Deep Q-Learning, a deep neural network is used to approximate the Q-function. Given a network `F`, finding an optimal policy is a matter of finding the best weights `w` such that `F(s,a,w) ≈ Q(s,a)`.
 
-The neural network architecture used for this project can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/model.py#L5) in the `model.py` file of the source code. The network contains three fully connected layers with 64, 64, and 4 nodes respectively. Testing of bigger networks (more nodes) and deeper networks (more layers) did not produce better results.
+The neural network architecture used for this project can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/blob/master1/model.py#L5) in the `model.py` file of the source code. The network contains three fully connected layers with 64, 64, and 4 nodes respectively. Testing of bigger networks (more nodes) and deeper networks (more layers) did not produce better results.
 
 As for the network inputs, rather than feeding-in sequential batches of experience tuples, I randomly sample from a history of experiences using an approach called Experience Replay.
 
@@ -113,7 +113,7 @@ Each experience is stored in a replay buffer as the agent interacts with the env
 
 Also, experience replay improves learning through repetition. By doing multiple passes over the data, our agent has multiple opportunities to learn from a single experience tuple. This is particularly useful for state-action pairs that occur infrequently within the environment.
 
-The implementation of the replay buffer can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/agent.py#L133) in the `agent.py` file of the source code.
+The implementation of the replay buffer can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/blob/master/agent.py#L133) in the `agent.py` file of the source code.
 
 
 #### Double Deep Q-Network (DDQN)
@@ -125,7 +125,7 @@ We can address this issue using Double Q-Learning, where one set of parameters `
 
 <img src="images/DDQN-slide.png" width="40%" align="top-left" alt="" title="DDQN" />
 
-The DDQN implementation can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/agent.py#L96) in the `agent.py` file of the source code.
+The DDQN implementation can be found [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/blob/master/agent.py#L96) in the `agent.py` file of the source code.
 
 
 #### Dueling Agents
@@ -135,7 +135,7 @@ Dueling networks utilize two streams: one that estimates the state value functio
 
 The reasoning behind this approach is that state values don't change much across actions, so it makes sense to estimate them directly. However, we still want to measure the impact that individual actions have in each state, hence the need for the advantage function.
 
-The dueling agents are implemented within the fully connected layers [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/model.py#L21) in the `model.py` file of the source code.
+The dueling agents are implemented within the fully connected layers [here](https://github.com/FelixGruener/Deep_Reinforcement_Learning_UP1/blob/master/model.py#L21) in the `model.py` file of the source code.
 
 
 ##### &nbsp;
